@@ -1,0 +1,50 @@
+[
+  {
+    "stage": "coding",
+    "title": "编码开发 Prompt",
+    "path": "prompts/coding/_index.md",
+    "markdown": "# 编码开发 Prompt\n\n## 代码生成\n\n### CRUD 全套生成\n```\n请基于以下表结构生成完整的 CRUD 代码：\n1. Entity 实体类（Lombok + MyBatis-Plus 注解）\n2. Mapper 接口\n3. Service 接口和实现类\n4. Controller（RESTful）\n5. DTO（CreateReq / UpdateReq / QueryReq / Response 分离）\n6. 参数校验注解\n\n表结构 DDL：[粘贴]\n```\n\n### 复杂业务逻辑\n```\n请实现以下业务逻辑，要求：\n1. 清晰的方法拆分\n2. 完善的异常处理（使用 BizException）\n3. 必要的日志记录\n4. 事务注解（如需要）\n5. 并发安全考虑\n\n业务描述：[描述]\n```\n\n## SQL 相关\n\n### 复杂查询编写\n```\n请编写满足以下需求的 SQL：\n表结构：[粘贴 DDL]\n查询需求：[描述]\n要求：考虑性能，避免全表扫描\n```\n\n### SQL 优化\n```\n以下 SQL 在大数据量下执行较慢：\n表数据量：[数量]\n当前索引：[列出]\nSQL：[粘贴]\nEXPLAIN 结果：[粘贴]\n\n请分析瓶颈并提供优化方案。\n```"
+  },
+  {
+    "stage": "debug",
+    "title": "问题排查与故障处理 Prompt",
+    "path": "prompts/debug/_index.md",
+    "markdown": "# 问题排查与故障处理 Prompt\n\n### 异常堆栈分析\n```\n请分析以下 Java 异常堆栈：\n1. 根本原因\n2. 可能的触发条件\n3. 修复建议\n4. 需要排查的相关代码位置\n\n[粘贴异常堆栈]\n```\n\n### 故障复盘报告\n```\n请根据以下信息生成故障复盘报告：\n- 故障时间：[时间]\n- 影响范围：[描述]\n- 故障现象：[描述]\n- 排查过程：[描述]\n- 根因：[描述]\n- 修复方案：[描述]\n\n报告格式：标准故障复盘模板（时间线、根因分析、改进措施）\n```"
+  },
+  {
+    "stage": "deploy",
+    "title": "部署与运维 Prompt",
+    "path": "prompts/deploy/_index.md",
+    "markdown": "# 部署与运维 Prompt\n\n### Dockerfile 生成\n```\n请为 Java Spring Boot 项目生成多阶段 Dockerfile：\n- JDK：17\n- 构建工具：Maven\n- 时区：Asia/Shanghai\n- 健康检查：/actuator/health\n- JVM 参数：-Xms512m -Xmx1g\n```\n\n### K8s 部署配置\n```\n请生成 Kubernetes 部署配置（Deployment + Service + ConfigMap）：\n- 应用名：[名称]\n- 副本数：2\n- 资源限制：CPU 1core / Memory 2Gi\n- 健康检查配置\n- 滚动更新策略\n```"
+  },
+  {
+    "stage": "design",
+    "title": "需求分析与方案设计 Prompt",
+    "path": "prompts/design/_index.md",
+    "markdown": "# 需求分析与方案设计 Prompt\n\n## 需求分析\n\n### 需求拆解\n```\n请分析以下产品需求文档，提取：\n1. 核心功能点和优先级排序\n2. 技术难点和风险点\n3. 需要与产品确认的模糊点\n4. 建议的任务拆解（含工时预估）\n\n[粘贴 PRD 内容]\n```\n\n### 需求边界识别\n```\n基于以下需求描述，请帮我识别：\n1. 显式需求（明确提到的功能）\n2. 隐式需求（未明说但必须支持的功能）\n3. 非功能性需求（性能、安全、兼容性等）\n4. 潜在的需求冲突\n\n[粘贴需求描述]\n```\n\n## 方案设计\n\n### 技术方案生成\n```\n基于以下需求，请设计技术方案，包含：\n1. 整体架构设计（含架构图描述）\n2. 核心模块划分和职责\n3. 数据库表结构设计（含索引建议）\n4. 关键接口定义（RESTful）\n5. 技术选型理由\n6. 潜在风险和应对策略\n\n技术栈：Java 17 + Spring Boot 3 + MyBatis-Plus + MySQL 8 + Redis\n需求：[粘贴需求]\n```\n\n### 数据库设计\n```\n根据以下业务模型设计 MySQL 表结构：\n1. 给出完整的 DDL\n2. 设计合理的索引（含联合索引）\n3. 说明字段设计理由\n4. 考虑后续扩展性\n\n业务模型：[描述业务实体和关系]\n预估数据量：[填写]\n```"
+  },
+  {
+    "stage": "doc",
+    "title": "文档与知识管理 Prompt",
+    "path": "prompts/doc/_index.md",
+    "markdown": "# 文档与知识管理 Prompt\n\n### API 文档生成\n```\n请根据以下 Controller 代码生成 API 文档（Markdown 格式）：\n- 接口路径、方法、说明\n- 请求参数（表格形式，含类型、必填、说明）\n- 响应字段说明\n- 错误码列表\n- curl 调用示例\n\n[粘贴 Controller 代码]\n```\n\n### 技术方案文档\n```\n请帮我组织以下技术方案为正式文档，结构包含：\n1. 背景与目标\n2. 方案概述\n3. 详细设计\n4. 技术选型对比\n5. 风险评估\n6. 排期计划\n\n原始方案内容：[粘贴]\n```"
+  },
+  {
+    "stage": "learn",
+    "title": "学习与技能提升 Prompt",
+    "path": "prompts/learn/_index.md",
+    "markdown": "# 学习与技能提升 Prompt\n\n### 技术选型对比\n```\n请对比以下技术方案，从性能、易用性、生态、学习成本、适用场景等维度分析：\n方案 A：[描述]\n方案 B：[描述]\n我的场景：[描述]\n```\n\n### 源码阅读辅助\n```\n请解读以下源码片段的核心流程：\n1. 入口和调用链\n2. 关键步骤说明\n3. 使用的设计模式\n4. 可学习的编程技巧\n5. 潜在的注意事项\n\n[粘贴源码]\n```"
+  },
+  {
+    "stage": "review",
+    "title": "代码审查 Prompt",
+    "path": "prompts/review/_index.md",
+    "markdown": "# 代码审查 Prompt\n\n### 全面代码审查\n```\n请审查以下代码变更，从以下维度给出建议：\n1. 逻辑正确性：是否有 bug 或边界条件遗漏\n2. 性能：是否有 N+1 查询、不必要的循环等\n3. 安全：是否有注入、越权等风险\n4. 可读性：命名、注释、代码结构\n5. 规范：是否符合 Java 编码规范\n\n[粘贴代码 diff]\n```\n\n### Commit Message 生成\n```\n请根据以下代码变更生成规范的 commit message：\n格式：<type>(<scope>): <subject>\ntype: feat/fix/refactor/docs/test/chore\n用中文描述\n\n变更内容：[粘贴 diff 或描述]\n```"
+  },
+  {
+    "stage": "test",
+    "title": "测试与质量保障 Prompt",
+    "path": "prompts/test/_index.md",
+    "markdown": "# 测试与质量保障 Prompt\n\n### 单元测试生成\n```\n请为以下 Java 方法生成单元测试：\n框架：JUnit 5 + Mockito\n要求：\n1. 覆盖正常流程\n2. 覆盖所有边界条件\n3. 覆盖异常分支\n4. Mock 外部依赖\n5. 使用 @DisplayName 描述测试场景\n\n[粘贴方法代码和类定义]\n```\n\n### 测试数据构造\n```\n请为以下接口生成测试数据集：\n1. 正常数据（3 组）\n2. 边界值数据（每个字段的最大/最小/空值）\n3. 异常数据（格式错误、类型错误）\n格式：JSON\n\n接口定义：[粘贴]\n```"
+  }
+]

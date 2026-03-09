@@ -1,0 +1,110 @@
+[
+  {
+    "id": "platforms/chatgpt",
+    "title": "ChatGPT",
+    "category": "platforms",
+    "stages": [
+      "design",
+      "coding",
+      "review",
+      "test",
+      "deploy",
+      "doc",
+      "debug",
+      "learn"
+    ],
+    "url": "https://chat.openai.com",
+    "path": "catalog/platforms/chatgpt.md"
+  },
+  {
+    "id": "platforms/claude",
+    "title": "Claude",
+    "category": "platforms",
+    "stages": [
+      "design",
+      "coding",
+      "review",
+      "doc",
+      "debug"
+    ],
+    "url": "https://claude.ai",
+    "path": "catalog/platforms/claude.md"
+  },
+  {
+    "id": "platforms/deepseek",
+    "title": "DeepSeek",
+    "category": "platforms",
+    "stages": [
+      "coding",
+      "doc",
+      "learn"
+    ],
+    "url": "https://chat.deepseek.com",
+    "path": "catalog/platforms/deepseek.md"
+  },
+  {
+    "id": "ide-plugins/copilot",
+    "title": "GitHub Copilot",
+    "category": "ide-plugins",
+    "stages": [
+      "coding",
+      "test"
+    ],
+    "url": "https://github.com/features/copilot",
+    "path": "catalog/ide-plugins/copilot.md"
+  },
+  {
+    "id": "ide-plugins/cursor",
+    "title": "Cursor",
+    "category": "ide-plugins",
+    "stages": [
+      "coding",
+      "review",
+      "debug"
+    ],
+    "url": "https://cursor.com",
+    "path": "catalog/ide-plugins/cursor.md"
+  },
+  {
+    "id": "mcp-services/gitlab-mcp",
+    "title": "GitLab MCP",
+    "category": "mcp-services",
+    "stages": [
+      "coding",
+      "review"
+    ],
+    "path": "catalog/mcp-services/gitlab-mcp.md",
+    "markdown": "# GitLab MCP\n\n## 基本信息\n\n| 字段 | 值 |\n|------|-----|\n| 类型 | MCP Server |\n| 能力 | 搜索代码/仓库、管理 MR、查看项目详情 |\n| 适用阶段 | 编码、审查 |\n| 集成方式 | Cursor MCP 配置 |\n\n## 核心能力\n\n- **代码搜索**：跨仓库搜索代码片段和文件\n- **仓库搜索**：根据关键词查找 GitLab 项目\n- **MR 管理**：查看、创建、更新 Merge Request\n- **代码变更查看**：获取 MR 的 diff 详情\n\n## 典型用法\n\n| 场景 | 操作 | 效果 |\n|------|------|------|\n| 查找参考实现 | \"搜索项目中 Redis 分布式锁的实现\" | 快速定位已有代码 |\n| 代码审查 | \"查看 MR #123 的变更内容\" | AI 分析 diff |\n| 重构前调研 | \"搜索所有使用 OldService 的代码\" | 评估影响范围 |\n\n## 配置方式\n\n在 Cursor 的 MCP 设置中添加 GitLab MCP Server 配置，需要提供 GitLab Token 和 API 地址。"
+  },
+  {
+    "id": "mcp-services/sourcegraph-mcp",
+    "title": "Sourcegraph MCP",
+    "category": "mcp-services",
+    "stages": [
+      "coding",
+      "debug"
+    ],
+    "path": "catalog/mcp-services/sourcegraph-mcp.md",
+    "markdown": "# Sourcegraph MCP\n\n## 基本信息\n\n| 字段 | 值 |\n|------|-----|\n| 类型 | MCP Server |\n| 能力 | 全局代码搜索、跨仓库检索 |\n| 适用阶段 | 编码、排查 |\n| 核心优势 | 支持正则搜索和结构化查询 |\n\n## 核心能力\n\n- **跨仓库搜索**：一次搜索覆盖所有代码仓库\n- **正则搜索**：支持复杂的正则表达式匹配\n- **文件内容获取**：直接获取指定文件的内容\n- **上下文定位**：搜索结果包含周围代码上下文\n\n## 典型用法\n\n| 场景 | 操作 | 效果 |\n|------|------|------|\n| 故障排查 | \"搜索错误码 BIZ_10086 的定义位置\" | 跨仓库定位 |\n| 接口调用方 | \"搜索哪些服务调用了 UserService.getById\" | 评估影响面 |\n| 配置排查 | \"搜索包含特定配置项的文件\" | 快速定位配置 |"
+  },
+  {
+    "id": "skills/code-review-skill",
+    "title": "Code Review Skill",
+    "category": "skills",
+    "stages": [
+      "review"
+    ],
+    "path": "catalog/skills/code-review-skill.md",
+    "markdown": "# Code Review Skill\n\n## 基本信息\n\n| 字段 | 值 |\n|------|-----|\n| 类型 | Cursor Agent Skill |\n| 触发方式 | 用户说\"审查代码\"/\"review\"/\"帮我 CR\" |\n| 适用阶段 | 代码审查 |\n| 核心能力 | 审查 git diff → 检测问题 → 生成审查报告 |\n\n## 检测范围\n\n- 逻辑错误和潜在 bug\n- 无用代码和冗余逻辑\n- 安全隐患（SQL 注入、XSS 等）\n- 性能问题（N+1 查询、内存泄漏等）\n- 代码规范违反\n\n## 使用示例\n\n对 Cursor Agent 说：\"帮我审查当前的代码变更\"，Skill 会分析 git diff 并生成结构化的审查报告。"
+  },
+  {
+    "id": "skills/commit-skill",
+    "title": "Commit Skill",
+    "category": "skills",
+    "stages": [
+      "coding"
+    ],
+    "path": "catalog/skills/commit-skill.md",
+    "markdown": "# Commit Skill\n\n## 基本信息\n\n| 字段 | 值 |\n|------|-----|\n| 类型 | Cursor Agent Skill |\n| 触发方式 | 用户说\"提交代码\"/\"commit\"/\"帮我提交\" |\n| 适用阶段 | 编码 |\n| 核心能力 | 分析代码变更 → 生成 commit 描述 → 执行提交 → 记录日志 |\n\n## 工作流程\n\n1. 分析 `git diff` 中的所有代码变更\n2. 按功能模块对变更进行分组\n3. 生成规范化的 commit message（中文）\n4. 执行 `git add` 和 `git commit`\n5. 将变更详情追加到 COMMIT-LOG.md\n\n## 使用示例\n\n直接对 Cursor Agent 说：\"帮我提交代码\"，Skill 会自动完成全部流程。"
+  }
+]

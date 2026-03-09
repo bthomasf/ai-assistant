@@ -1,0 +1,58 @@
+[
+  {
+    "stage": "design",
+    "title": "需求分析与方案设计",
+    "order": 1,
+    "description": "从产品需求文档到技术方案落地的过程。这是开发工作的起点，好的需求理解和方案设计能大幅减少后续返工。",
+    "path": "lifecycle/01-design.md"
+  },
+  {
+    "stage": "coding",
+    "title": "编码开发",
+    "order": 2,
+    "description": "日常编码实现阶段，占工作时间比例最大。AI 工具在这个阶段能带来最直接的效率提升。",
+    "path": "lifecycle/02-coding.md"
+  },
+  {
+    "stage": "review",
+    "title": "代码审查",
+    "order": 3,
+    "description": "提交 MR/PR 前后的代码质量把关。AI 可以作为第一轮审查者，提前发现潜在问题。",
+    "path": "lifecycle/03-review.md"
+  },
+  {
+    "stage": "test",
+    "title": "测试与质量保障",
+    "order": 4,
+    "description": "单元测试、集成测试和质量度量。AI 能显著降低编写测试用例的成本。",
+    "path": "lifecycle/04-testing.md"
+  },
+  {
+    "stage": "deploy",
+    "title": "部署与运维",
+    "order": 5,
+    "description": "从打包构建到线上部署与日常运维。AI 能帮助快速生成配置文件和排查部署问题。",
+    "path": "lifecycle/05-deploy.md"
+  },
+  {
+    "stage": "doc",
+    "title": "文档与知识管理",
+    "order": 6,
+    "description": "技术文档编写和团队知识沉淀。AI 能大幅降低文档编写成本。",
+    "path": "lifecycle/06-docs.md"
+  },
+  {
+    "stage": "debug",
+    "title": "问题排查与故障处理",
+    "order": 7,
+    "description": "线上问题定位与修复。AI 在日志分析和根因定位方面能提供很大帮助。",
+    "path": "lifecycle/07-debug.md"
+  },
+  {
+    "stage": "learn",
+    "title": "学习与技能提升",
+    "order": 8,
+    "description": "技术成长和新技术学习。AI 是强大的学习伙伴，能加速理解复杂概念。",
+    "path": "lifecycle/08-learning.md"
+  }
+]
